@@ -1,7 +1,7 @@
 <div class="row row-cols-1 row-cols-md-3 rows-col-lg-4 g-3">
   <% photos.each do |photo| %>
     <div class="col">
-      <%= image_tag photo, class: "img-thumbnail gallery_photo" %>
+      <%= image_tag photo, loading: "lazy" ,class: "img-thumbnail gallery_photo" %>
     </div>
   <% end %>
 </div>

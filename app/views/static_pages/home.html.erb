@@ -1,18 +1,12 @@
 <section class="border rounded-2 p-4">
-  <%= form_with url: root_path, method: :get do |f| %>
-    <div class="hstack gap-3">
-      <div class="w-100">
-        <%= f.label :flickr_id, class: "visually-hidden" %>
-        <%= f.text_field :flickr_id, class: "form-control", placeholder: "Flickr ID..." %>
-      </div>
-      <div>
-        <%= f.submit "Submit", class: "btn btn-primary" %>
-      </div>
-    </div>
-  <% end %>
+  <%= render "flickr_form" %>
 </section>
 <section class="mt-5">
-  <h2><%= pluralize(@photos.length , 'Photo') %></h2>
-  <hr>
-  <%= render "gallery", photos: @photos %>
+  <% if @photos.empty? %>
+    <%= render "no_photos" %>
+  <% else %>
+    <h2><%= pluralize(@photos.length , 'Photo') %></h2>
+    <hr>
+    <%= render "gallery", photos: @photos %>
+  <% end %>
 </section>

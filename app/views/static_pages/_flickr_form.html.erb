@@ -1,0 +1,12 @@
+<%= form_with url: root_path, method: :get do |f| %>
+  <div class="hstack gap-3">
+    <div class="w-100">
+      <%= f.label :flickr_id, class: "visually-hidden" %>
+      <%= f.text_field :flickr_id, class: "form-control", value: params[:flickr_id] || nil ,placeholder: "Flickr ID..." %>
+    </div>
+    <div class="hstack gap-2">
+      <%= link_to "Clear", root_path, class: "btn btn-secondary" %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
