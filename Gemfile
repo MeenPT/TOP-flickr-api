@@ -63,3 +63,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "dotenv", groups: [ :development, :test ]
+gem "flickr", "~> 2.1"
